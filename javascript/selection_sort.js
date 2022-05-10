@@ -28,6 +28,18 @@ if (require.main === module) {
   for (let i = 0; i < 100; ++i) {
     longInput.push(Math.random());
   }
+
+  const startTime = Date.now();
+
+  for (let i = 0; i < 1000; ++i) {
+    selectionSort([2, 1]);
+    selectionSort(longInput);
+  }
+
+  const avgTime = (Date.now() - startTime) / 2000;
+
+  console.log(avgTime);
+
 }
 
 module.exports = selectionSort;
